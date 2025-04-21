@@ -8,7 +8,7 @@ const reduxStore = configureStore({
     reducer: {
         user: userReducer,
         feed: feedReducer,
-        connections: connectionReducer,
+        connections: connectionReducer ,
         requests: requestReducer,
     },
 });
