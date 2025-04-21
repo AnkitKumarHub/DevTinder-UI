@@ -40,6 +40,7 @@ src/utils/*
 !src/components/UserCard.jsx
 !src/components/Profile.jsx
 !src/components/Login.jsx
+!src/components/Connections.jsx
 
 
 
@@ -49,3 +50,4 @@ src/utils/*
 !src/utils/userSlice.js
 !src/utils/feedSlice.js
 !src/utils/constants.js
+!src/utils/connectionSlice.js
