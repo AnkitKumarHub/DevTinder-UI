@@ -36,8 +36,13 @@ src/utils/*
 # Allow only Navbar.jsx
 !src/components/Navbar.jsx
 !src/components/Body.jsx
+!src/components/Feed.jsx
+!src/components/UserCard.jsx
+
 
 
 
 !src/utils/reduxStore.js
 !src/utils/userSlice.js
+!src/utils/feedSlice.js
+!src/utils/constants.js
