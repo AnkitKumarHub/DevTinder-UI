@@ -18,10 +18,10 @@ function App() {
         <Routes>
           <Route path = "/" element = {<Body />}>
             <Route path = "/" element = {<Feed />} />
-            {/* <Route path = "/login" element = {<Login />} />
+            <Route path = "/login" element = {<Login />} />
             <Route path = "/profile" element = {<Profile />} />
             <Route path = "/connections" element = {<Connections />} />
-            <Route path = "/requests" element = {<Requests />} /> */}
+            <Route path = "/requests" element = {<Requests />} />
           </Route>
           {/* // <Route path = "/login" element = {<div>login page  </div>} /> */}
           {/* // <Route path = "/test" element = {<div>Test page</div>} /> */}

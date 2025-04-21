@@ -30,3 +30,15 @@ const Body = () =>{
 };
 
 export default Body;
+
+
+- Install axios
+- cors - install corsin backend => add middleware to with configuration : origin , credential: True
+- whenever you are making API call (frontend) so pass => {with credential : true}
+
+
+- Install react-redux +  @reduxjx/toolkit  - (see document) 
+=> configure store => Provider to application => createSlice => add reducer to store 
+
+Ques - How to add data to redux Store
+ans -   hook (useDispatch) =>  dispatch an action 
