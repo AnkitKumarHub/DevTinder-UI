@@ -1,32 +1,32 @@
-// import React, { useEffect } from 'react'
-// import { BASE_URL } from '../utils/constants';
+import React, { useEffect } from 'react'
+import { BASE_URL } from '../utils/constants';
 import { useDispatch, useSelector } from 'react-redux';
-// import { addFeed } from '../utils/feedSlice';
-// import axios from 'axios';
+import { addFeed } from '../utils/feedSlice';
+import axios from 'axios';
 import UserCard from './UserCard';
 
 const Feed = () => {
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const feed = useSelector((store) => store.feed);
 
-  // const getFeed = async() => {
-  //   try{
+  const getFeed = async() => {
+    try{
 
-  //     if(feed) return; //if feed is alrdy there => return
+      if(feed) return; //if feed is alrdy there => return
 
-  //     const res = await axios.get(BASE_URL + "/feed", {withCredentials: true,});
+      const res = await axios.get(BASE_URL + "/feed", {withCredentials: true,});
 
-  //     dispatch(addFeed(res?.data?.data));
-  //   } catch(err)
-  //   {
-  //     console.error(err.message);
-  //   }
-  // };
+      dispatch(addFeed(res?.data?.data));
+    } catch(err)
+    {
+      console.error(err.message);
+    }
+  };
 
-  // useEffect(() => {
-  //   getFeed();
-  // }, []);
+  useEffect(() => {
+    getFeed();
+  }, []);
 
   if(!feed) return;
 

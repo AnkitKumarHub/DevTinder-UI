@@ -38,6 +38,9 @@ src/utils/*
 !src/components/Body.jsx
 !src/components/Feed.jsx
 !src/components/UserCard.jsx
+!src/components/Profile.jsx
+!src/components/Login.jsx
+
 
 
 
