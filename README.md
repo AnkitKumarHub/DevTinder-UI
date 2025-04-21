@@ -5,3 +5,5 @@
 - Install tailwind
 - Install daisyUI
 - Add navbar component to app.jsx
+
+- for Routing => npm i react-router-dom

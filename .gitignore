@@ -23,5 +23,13 @@ dist-ssr
 *.sln
 *.sw?
 
-src/components
-src/utils
+# Ignore everything in src
+src/*
+
+# Allow src/components directory but ignore its contents
+!src/components/
+src/components/*
+
+# Allow only Navbar.jsx
+!src/components/Navbar.jsx
+!src/components/Body.jsx
