@@ -41,6 +41,7 @@ src/utils/*
 !src/components/Profile.jsx
 !src/components/Login.jsx
 !src/components/Connections.jsx
+!src/components/EditProfile.jsx
 
 
 
@@ -51,3 +52,4 @@ src/utils/*
 !src/utils/feedSlice.js
 !src/utils/constants.js
 !src/utils/connectionSlice.js
+!src/utils/requestSlice.js
