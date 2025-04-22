@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 
 const Login = () => {
-  const [emailId, setEmailId] = useState();
-  const [password, setPassword] = useState();
+  const [email, setemail] = useState("");
+  const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [isLoginForm, setIsLoginForm] = useState(true);
@@ -20,7 +20,7 @@ const Login = () => {
       const res = await axios.post(
         BASE_URL + "/login",
         {
-          emailId,
+          email,
           password,
         },
         { withCredentials: true }
@@ -40,7 +40,7 @@ const Login = () => {
     try {
       const res = await axios.post(
         BASE_URL + "/signup",
-        { firstName, lastName, emailId, password },
+        { firstName, lastName, email, password },
         { withCredentials: true }
       );
 
@@ -142,9 +142,9 @@ const Login = () => {
               type="email"
               placeholder="mail@site.com"
               required
-              value={emailId}
+              value={email}
               onChange={(e) => {
-                setEmailId(e.target.value);
+                setemail(e.target.value);
                 setError(""); // Clear the error when user starts typing again
               }}
             />
