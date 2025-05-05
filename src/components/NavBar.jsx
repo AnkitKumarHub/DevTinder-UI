@@ -42,6 +42,12 @@ const NavBar = () => {
           <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg p-4 text-white max-w-md my-2">
             <h2 className=" font-bold">Welcome back, {user.firstName} 👋</h2>
           </div>
+          <Link
+                  to="/premium"
+                  className="justify-between text-yellow-500 font-semibold"
+                >
+                  ✨ Premium
+                </Link>
           <div className="dropdown dropdown-end mx-5 flex">
             {/* <p className='px-4'>Welcome, {user.firstName}</p> */}
             <div

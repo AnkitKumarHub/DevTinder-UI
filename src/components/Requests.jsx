@@ -12,7 +12,7 @@ const Requests = () => {
   const reviewRequest = async (status, requestId) => {
     try {
       await axios.post(
-        BASE_URL + "/request/review/" + status + "/" + requestId,
+        BASE_URL+ "/request/review/" + status + "/" + requestId,
         {
           //empty => as this is a post call and i don't have to send any data
         },
@@ -26,11 +26,11 @@ const Requests = () => {
   };
   const fetchRequests = async () => {
     try {
-      const res = await axios.get(BASE_URL + "/user/requests/recieved", {
+      const res = await axios.get(BASE_URL + "/user/request/recieved", {
         withCredentials: true,
       });
-      // console.log(res?.data);
-      dispatch(addRequest(res?.data?.connectionRequests));
+      console.log(res?.data);
+      dispatch(addRequest(res?.data?.pendingRequests));
     } catch (err) {
       console.error(err);
     }
