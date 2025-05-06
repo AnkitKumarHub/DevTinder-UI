@@ -83,3 +83,22 @@ whenever you purchase a domain name there is Domain Ragistrar(= the place form w
 
 the user can do succesfull payment any time 
 configure the razorpay webhooks and we will give the the live API to be called whenever the payment is captured or failed  
+
+
+# Real-Time Chat using WebSocket(socket.io)
+- Build the UI for a chat window on /chat/:targetUserId
+- setup socket.io in backend
+- npm i socket.io
+- configure the setup for socket.io in backend (app.js) by creating the sever for socket.io and initializing the socket with server
+- initalizing the socket.io with server and cors and handling Some events (socket.js)
+
+- npm i socket.io-client (forntend)
+
+suppose 100 of people making connection i just want connect a specific person (Ankit -> Virat) to make sure the roomId's are correct which means they are connected now if the roomId are same 
+
+if Ankit will send msg to room then it will go to Virat and if virat will msg to this room then it will go to ANkit (connected to the same roomID)
+
+
+
+
+//TODO: 
