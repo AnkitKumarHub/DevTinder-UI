@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../utils/constants";
+import axiosInstance from "../utils/axiosConfig";
 
 const Login = () => {
   const [email, setemail] = useState("");
@@ -17,39 +16,36 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post(
-        BASE_URL + "/login",
-        {
-          email,
-          password,
-        },
-        { withCredentials: true }
-      );
+      const res = await axiosInstance.post("/login", {
+        email,
+        password,
+      });
 
-      // console.log(res.data); //res.data contains the actual data i.e, user data which we sent through api in backend => store this data in redux store => useDispatch hook
-      dispatch(addUser(res.data));
-
-      return navigate("/"); //navigate to this path after clicking login
+      if (res.data) {
+        dispatch(addUser(res.data));
+        // Force a page reload to ensure cookie is properly set
+        window.location.href = "/";
+        return;
+      }
     } catch (err) {
       setError(err?.response?.data || "Something Went Wrong");
-      // console.error(err);
     }
   };
 
   const handleSignUp = async () => {
     try {
-      const res = await axios.post(
-        BASE_URL + "/signup",
-        { firstName, lastName, email, password },
-        { withCredentials: true }
+      const res = await axiosInstance.post("/signup", 
+        { firstName, lastName, email, password }
       );
 
-      dispatch(addUser(res.data.data));
-
-      return navigate("/profile");
+      if (res.data.data) {
+        dispatch(addUser(res.data.data));
+        // Force a page reload to ensure cookie is properly set
+        window.location.href = "/profile";
+        return;
+      }
     } catch (err) {
       setError(err?.response?.data || "Something Went Wrong");
-      console.error(err);
     }
   };
 
